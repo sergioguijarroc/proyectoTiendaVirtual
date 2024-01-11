@@ -22,13 +22,13 @@ class Producto(models.Model):
     modelo = models.CharField(max_length=50)
     vip = models.BooleanField(default=False)
     unidades_stock = models.IntegerField(default=0)
-    nombre_marca = models.ForeignKey("Marca", on_delete=models.PROTECT)
+    marca = models.ForeignKey("Marca", on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
 
     class Meta:
-        unique_together = ("modelo", "nombre_marca")
+        unique_together = ("modelo", "marca")
         verbose_name_plural = "Productos"
 
 

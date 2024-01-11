@@ -5,8 +5,9 @@
     <div class="col">
         {%for producto in producto_list%}
         <h2>{{producto.nombre}}</h2>
-        <p>Marca: {{producto.marca_nombre}}</p>
+        <p>Marca: {{producto.marca.nombre}}</p>
         <p>Modelo: {{producto.modelo}}</p>
+        <a href="{%url 'producto_detail' pk=producto.pk %}">Detalles</a>
         {%endfor%}
     </div>
 </div>
