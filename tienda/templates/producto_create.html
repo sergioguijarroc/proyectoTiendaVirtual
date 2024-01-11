@@ -1,0 +1,13 @@
+{%extends "tienda/base.html"%}
+{% block title %} Lista de productos {% endblock %}
+{%block content%}
+<div class="row">
+    <div class="col">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+</div>
+{%endblock%}
